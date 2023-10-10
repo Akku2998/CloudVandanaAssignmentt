@@ -1,7 +1,5 @@
 function submitForm(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-
-    // Get form values
+    event.preventDefault(); 
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
     const dob = document.getElementById('dob').value;
@@ -12,7 +10,6 @@ function submitForm(event) {
     const email = document.getElementById('email').value;
     const mobile = document.getElementById('mobile').value;
 
-    // Display the values in a popup
     const popupContent = `
         <p><strong>First Name:</strong> ${firstName}</p>
         <p><strong>Last Name:</strong> ${lastName}</p>
@@ -26,7 +23,6 @@ function submitForm(event) {
     document.getElementById('popup-content').innerHTML = popupContent;
     document.getElementById('popup').style.display = 'block';
 
-    // Reset the form
     document.getElementById('surveyForm').reset();
 }
 
