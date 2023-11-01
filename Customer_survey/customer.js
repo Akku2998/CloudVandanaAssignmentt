@@ -11,7 +11,7 @@ function submitForm(event) {
     const mobile = document.getElementById('mobile').value;
 
     const popupContent = `
-        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>First Name:</strong> ${firstName}</p>gi
         <p><strong>Last Name:</strong> ${lastName}</p>
         <p><strong>Date of Birth:</strong> ${dob}</p>
         <p><strong>Country:</strong> ${country}</p>
