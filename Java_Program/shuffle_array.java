@@ -1,24 +1,32 @@
 import java.util.Arrays;
-import java.util.Random;
 
-public class CustomArrayShuffler {
+public class CustomShuffleArray {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7};
-        shuffleArray(arr);
-        
-        for (int num : arr) {
-            System.out.print(num + " ");
+        int[] originalArray = {1, 2, 3, 4, 5, 6, 7};
+        int[] shuffledArray = customShuffleArray(originalArray);
+
+        System.out.println("Original array: " + Arrays.toString(originalArray));
+        System.out.println("Shuffled array: " + Arrays.toString(shuffledArray));
+    }
+
+    public static int[] customShuffleArray(int[] array) {
+        int[] shuffledArray = array.clone();
+        customRandomizeArray(shuffledArray);
+
+        return shuffledArray;
+    }
+
+    public static void customRandomizeArray(int[] array) {
+        int n = array.length;
+        for (int i = n - 1; i > 0; i--) {
+            int j = customRandom(i + 1); 
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
     }
-    
-    public static void shuffleArray(int[] arr) {
-        Random rand = new Random();
-        
-        for (int i = arr.length - 1; i > 0; i--) {
-            int j = rand.nextInt(i + 1); 
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
+
+    public static int customRandom(int n) {
+        return (int) (System.currentTimeMillis() % n);
     }
 }
